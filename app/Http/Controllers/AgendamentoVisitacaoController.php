@@ -129,11 +129,7 @@ class AgendamentoVisitacaoController extends Controller
 
     public function listagem(){
         $visitantes = $this->repository->all();
-<<<<<<< HEAD
         $horarios = $this->horarios_visitacao->get();
-=======
-        $horarios = $this->horarios_visitacao->where("id",'>',"324" )->get();
->>>>>>> b30cfea0041629373650720ab9703d67a500f646
 
         return view('site.pages.visitacao.listagem',
             compact('visitantes', 'horarios'));
