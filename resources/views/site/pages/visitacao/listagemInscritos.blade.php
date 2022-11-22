@@ -1,11 +1,7 @@
 	
 @extends('adminlte::page')
 
-<<<<<<< HEAD
 @section('title', 'Fábrica do Papai Noel 2022')
-=======
-@section('title', 'Casa do Biscoito 2022')
->>>>>>> b30cfea0041629373650720ab9703d67a500f646
 
 @section('content_header')
 <h1>Inscritos para a Fábrica do Papai Noel - 
