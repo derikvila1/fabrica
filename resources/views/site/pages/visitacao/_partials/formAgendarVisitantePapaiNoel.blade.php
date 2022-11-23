@@ -32,6 +32,12 @@
 				</div>
 			</div>
 			<div class="row">
+			<div class="img-natal-1" style="margin: auto; text-align: center;"><img src="\logonatalpng.png"
+                style="width: 90%; max-width: 200px; text-align: center; margin-top: 20px; margin-right: 20px;">
+				<img
+                            src="\noel-logo.png"
+                            style="width: 90%; max-width: 250px; text-align: center;">
+			</div>
 				<div class="col-md-12">
 					<div class="py-5 text-center">
 						<h2>Bem vindo</h2>
