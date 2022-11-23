@@ -325,23 +325,34 @@
                             ''}}</b>
                     </p>
 
-                    <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
-                    <p id="label-documento-comprovante"><b>Data Nascimento: {{
-                            $visitante_cadastrato->dependente_data_nascimento
-                            ?? ''}}</b> </p>
 
-                    <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente2_nome }}</b> </p>
-                    <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                    <?php if ($visitante_cadastrato->dependente_nome == true): ?>
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
+                        <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente_data_nascimento
+                                ?? ''}}</b> </p>
+                    <?php endif   ?>  
+
+
+                    <?php if ($visitante_cadastrato->dependente2_nome == true ): ?>
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente2_nome }}</b> </p>
+                        <p id="label-documento-comprovante"><b>Data Nascimento: {{
                             $visitante_cadastrato->dependente2_data_nascimento ?? ''}}</b> </p>
-
-                    <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente3_nome }}</b> </p>
-                    <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                    <?php endif   ?>  
+                    
+                    <?php if ($visitante_cadastrato->dependente3_nome == true ): ?>
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente3_nome }}</b> </p>
+                        <p id="label-documento-comprovante"><b>Data Nascimento: {{
                             $visitante_cadastrato->dependente3_data_nascimento ?? ''}}</b> </p>
+                    <?php endif   ?>  
 
-                    <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente4_nome }}</b> </p>
-                    <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                    <?php if ($visitante_cadastrato->dependente4_nome == true): ?>
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente4_nome }}</b> </p>
+                        <p id="label-documento-comprovante"><b>Data Nascimento: {{
                             $visitante_cadastrato->dependente4_data_nascimento ?? ''}}</b> </p>
+                    <?php endif   ?>  
                 </div>
+
 
 
 
