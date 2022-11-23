@@ -29,7 +29,7 @@
             padding-left: 70px;
             padding-bottom: 20px;
 
- 
+
             margin: auto;
 
         }
@@ -78,8 +78,8 @@
 
             margin: auto;
             background-color: white;
-         padding-right: 20px;
-         padding-left: 20px;
+            padding-right: 20px;
+            padding-left: 20px;
         }
 
         #label-espaco-comprovante {
@@ -170,7 +170,7 @@
         #infos-visitante {}
 
         .observacoes-importantes {
-         padding-top: 30px;
+            padding-top: 30px;
             margin: auto;
 
         }
@@ -203,6 +203,7 @@
 
 
             }
+
             .column-3 {
                 float: left;
                 width: 33.33%;
@@ -217,11 +218,13 @@
 
         }
 
-        
+
 
         .info-inscrito {}
 
-        #label-documento-comprovante {}
+        #label-documento-comprovante {
+            font-size: 13.5px;
+        }
 
 
 
@@ -295,7 +298,7 @@
                     <h1 class="ui header" style="color: rgb(202, 60, 60); font-size: 14px; padding-top:20px ;">
                         COMPROVANTE DE INSCRIÇÃO
                     </h1>
-                    <h1 class="ui header" style="color: rgb(202, 60, 60); font-size: 14px;">ESTAÇÃO CASA DO BISCOITO
+                    <h1 class="ui header" style="color: rgb(202, 60, 60); font-size: 14px;">FÁBRICA DO PAPAI NOEL
                     </h1>
 
                     {{-- <p id="descricao-page-comprovante-text" style="color: rgb(60, 145, 202);"></p>
@@ -350,8 +353,6 @@
         </div>
 
 
-        
-        
 
 
 
@@ -362,61 +363,64 @@
 
 
 
-</div>
+
+
+    </div>
 
 
 
-<div class="observacoes-importantes" id="column-3">
-    <h1 class="ui header" id="texto-title">INFORMAÇÕES AO VISITANTE</h1>
-    <div class="divider div-transparent"></div>
-    <div id="div-importantes-observacoes" style="padding-bottom:30px ;">
-        <b>
+    <div class="observacoes-importantes" id="column-3">
+        <h1 class="ui header" id="texto-title">INFORMAÇÕES AO VISITANTE</h1>
+        <div class="divider div-transparent"></div>
+        <div id="div-importantes-observacoes" style="padding-bottom:30px ;">
+            <b>
 
 
-            <p id="label-documento-comprovante"> ● É necessário chegar com 20 minutos de antecedência no
-                local citado acima;</p>
+                <p id="label-documento-comprovante"> ● O local de encontro para iniciar a visitação será na Recepção da
+                    Fábrica do Papai Noel, localizada em frente ao Palácio da Justiça do Amazonas (prédio amarelo) atrás
+                    do Teatro Amazonas, Av. Eduardo Ribeiro com a rua 10 de Julho. A Recepção da Fábrica se encontra
+                    devidamente sinalizada e será o ponto de partida da visitação; </p>
 
 
-            <p id="label-documento-comprovante"> ● A entrada do público será feita no horário marcado do
-                agendamento. Não haverá tolerância no horário de chegada.
-                Após o tempo expirado, será necessário realizar novo agendamento;</p>
+                <p id="label-documento-comprovante">● É necessário chegar com 20 minutos de antecedência no local citado
+                    acima; </p>
 
-            <p id="label-documento-comprovante"> ● O comprovante de agendamento só é válido para o dia e
-                horário presentes no mesmo, não sendo permitido a
-                utilização dele em dias e horários diferentes;</p>
+                <p id="label-documento-comprovante">● Ao chegar no local de encontro (Recepção da Fábrica), os
+                    visitantes deverão apresentar o comprovante do agendamento para realizar a visitação na Fábrica;
+                </p>
 
-            <p id="label-documento-comprovante"> ● Eu AUTORIZO a Secretaria de Estado de Cultura e Economia
-                Criativa do Amazonas a utilizar a imagem do menor feita
-                para o passaporte de Natal, assim como as demais imagens capturadas durante a visita, em
-                todo e
-                qualquer material entre imagens de vídeo, fotos e voz. A presente autorização é concedida a
-                título gratuito, abrangendo o uso da imagem
-                acima mencionada, das seguintes formas: folhetos em geral, anúncios em revistas, jornais e
-                TV; sites e portais; e redes sociais
-                (facebook, instagram, twitter, youtube e demais plataformas digitais de streaming e
-                compartilhamento de dados).</p>
-
-            <h1 class="ui header" id="texto-title">ATENÇÃO:</h1>
-            <p id="label-documento-comprovante"> ● Informamos que o espaço desenvolverá atividades voltadas
-                para o público de 1 a 5 anos, como
-                oficinas, brincadeiras e apresentações artísticas. Durante 50 minutos as crianças serão
-                acompanhadas
-                pelos recreadores nas atividades e o responsável pelo menor, deverá permanecer no espaço
-                durante
-                a realização da ação. </p>
+                <p id="label-documento-comprovante">● A entrada do público será feita no horário marcado do agendamento.
+                    Não haverá tolerância no horário de chegada. Após o tempo expirado, será necessário realizar novo
+                    agendamento; </p>
 
 
+                <p id="label-documento-comprovante"> ● O comprovante de agendamento só é válido para o dia e horário
+                    presentes no mesmo, não sendo permitido a utilização dele em dias e horários diferentes; </p>
+
+                <p id="label-documento-comprovante">● Será estipulado o número de até 25 (vinte e cinco) visitantes
+                    (entre adultos e crianças) por horário de visitação, com duração média de até 30 minutos cada. </p>
+                <p id="label-documento-comprovante">● É terminantemente proibido o visitante (adulto ou criança) se
+                    dispersar do grupo, uma vez que todas as visitas serão mediadas por um condutor cultural.</p>
+                <p id="label-documento-comprovante">● Eu AUTORIZO a Secretaria de Estado de Cultura e Economia Criativa
+                    do Amazonas a utilizar a imagem do menor de idade que for capturada durante a visita à Fábrica do
+                    Papai Noel, em todo e qualquer material entre imagens de vídeo, fotos e voz. A presente autorização
+                    é concedida a título gratuito, abrangendo o uso da imagem acima mencionada, das seguintes formas:
+                    folhetos em geral, anúncios em revistas, jornais e TV; sites e portais; e redes sociais (facebook,
+                    instagram, twitter, youtube e demais plataformas digitais de streaming e compartilhamento de dados).
+                </p>
+
+
+        </div>
     </div>
-</div>
 
 
 
 
-        <script>
-            function imprimir() {
-                window.print();
-            }
-        </script>
+    <script>
+        function imprimir() {
+            window.print();
+        }
+    </script>
 </body>
 
 </html>
