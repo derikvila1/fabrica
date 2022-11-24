@@ -20,9 +20,13 @@ Route::get('agendamento/fabrica/qrcode',  [AgendamentoVisitacaoController::class
 Route::post('agendamento/fabrica/create', [AgendamentoVisitacaoController::class, 'store'  ]);
 Route::get('agendamento/fabrica',         [AgendamentoVisitacaoController::class, 'index'  ]);
 
-Route::get('horarios',                    [HorariosVisitacaoController::class, 'index'  ]);
+Route::get('horarios',                    [AgendamentoVisitacaoController::class, 'reprint'  ]);
 
 Route::get('listagem',                    [AgendamentoVisitacaoController::class, 'listagem']);
 Route::get('listagem/inscritos/{id}',     [AgendamentoVisitacaoController::class, 'listagemInscritos']);
 Route::get('pdf/{id}',                    [AgendamentoVisitacaoController::class, 'listagemPDF']);
 
+
+Route::get('reprint',        [AgendamentoVisitacaoController::class, 'reprint']);
+
+Route::get('reprint2', [AgendamentoVisitacaoController::class, 'reprint2']);

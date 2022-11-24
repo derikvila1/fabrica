@@ -127,6 +127,23 @@ class AgendamentoVisitacaoController extends Controller
         }
     }
 
+    public function reprint(){
+        
+        return view('site.pages.visitacao.reprint');
+    }
+
+    public function reprint2 (Request $request){
+
+        $code= "teste";
+        $cpf = $request->cpf;
+        
+        $visitante_cadastrato = AgendamentoVisitacao::where('cpf', $cpf)->get();
+        dd($visitante_cadastrato);
+        $row = HorariosVisitacao::where('id', $visitante_cadastrato->horario_visitacao_id)->first();
+     
+        return view('site.pages.visitacao.qrcode', compact('visitante_cadastrato', 'code', 'row',));
+    }
+
     public function listagem(){
         $visitantes = $this->repository->all();
         $horarios = $this->horarios_visitacao->get();
