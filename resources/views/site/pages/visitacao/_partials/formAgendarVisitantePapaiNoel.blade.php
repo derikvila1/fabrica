@@ -54,6 +54,10 @@
 							Por favor aguarde a abertura de novas vagas.
                         </p>
 					</div>
+					<div class="py-2 text-center">
+						<h2>REIMPRESSÃO DE COMPROVANTE</h2>
+						<a href="\consulta">Clique aqui</a>
+					</div>
 				</div>
 
 			</div>
