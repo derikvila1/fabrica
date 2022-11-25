@@ -24,12 +24,26 @@
     
     
 
-        <div>
-            <label for="">CPF</label>
-            <input type="text" name='cpf' id="cpf" >
+
+	<form action="/reprint" method = "GET">
+
+
+
+	<div style= "margin: 20%">
+
+		<h2 style = "aling-text: center">Para consultar o seu agendamento digite o seu CPF</h2>
+		<div>
+			<label for="">CPF</label>
+			<input type="text" name='cpf' id="cpf" >
         </div>
         
-        <a href="/reprint2" class="btn btn-info" title="Lista em PDF">
-                            <i class="fas fa-list"></i>
-                        </a>
+		<button class="btn btn-info"
+		> consultar</button>
+	</div>
+		
+	</form>
+
+
+
     </body>
+

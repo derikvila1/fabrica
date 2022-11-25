@@ -134,7 +134,7 @@
                                 <div class="col-md-12">
                                     <button type="button" onclick="addDep()"
 									class="btn btn-success" 
-									id="btn_dependentes">Adicionar Depentende</button>
+									id="btn_dependentes">Adicionar Dependente</button>
                                 </div>
                             </div>
 							<br>
