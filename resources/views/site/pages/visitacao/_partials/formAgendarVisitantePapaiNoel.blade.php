@@ -47,16 +47,19 @@
                         </p>
 					</div>
 				</div> -->
-				<div class="col-md-12">
-					<div class="py-5 text-center">
-						<h2>AGENDAMENTO ESGOTADO</h2>
+				<div class="py-5 text-center">
+						<h3>AGENDAMENTO DA SEMANA ESGOTADO</h3>
 						<p class="lead pt-2">
-							Por favor aguarde a abertura de novas vagas.
+							Abertura de novas vagas às sextas-feiras, a partir das 11h.
                         </p>
+
+						<P>
+						Ative o SININHO DA CULTURA nas redes sociais (@culturadoam) para não perder as outras informações sobre os próximos agendamentos, programação, estreias e muito mais!
+						</P>
 					</div>
 					<div class="py-2 text-center">
-						<h2>REIMPRESSÃO DE COMPROVANTE</h2>
-						<a href="\consulta">Clique aqui</a>
+						<h5>REIMPRESSÃO DE COMPROVANTE</h5>
+						<a href="\consulta">Clique aqui!</a>
 					</div>
 				</div>
 
