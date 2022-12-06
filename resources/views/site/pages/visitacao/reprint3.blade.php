@@ -31,7 +31,7 @@
 		@foreach($visitante_cadastrato as $key =>$visitante)
 		
 		
-		
+			
 		<td style="width=10px;">
 			
 			<a href="/reprint2?cpf={{$visitante->cpf}}&index={{$key}}" class="btn btn-info" title="Lista em PDF">
@@ -39,6 +39,12 @@
 			</a>
 		</td>
 		
+
+		@if ($visitante == [])
+			<h2> Não foi encontramos nenhum agendamento para este CPF.</h2>
+			<br>
+			<h3> Certifique de digitar corretamente usando somente os números.</h3>
+		@endif
 		@endforeach
 		
 	</div>
