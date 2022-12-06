@@ -40,7 +40,7 @@
 		</td>
 		
 
-		@if ($visitante == [])
+		@if ( !$visitante_cadastrato )
 			<h2> Não foi encontramos nenhum agendamento para este CPF.</h2>
 			<br>
 			<h3> Certifique de digitar corretamente usando somente os números.</h3>
