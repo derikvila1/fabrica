@@ -27,6 +27,14 @@
     
 			<H1>Selecione o comprovante para a impressão</H1>
 	<div style= "margin:20%">
+
+
+		
+		@if( count($visitante_cadastrato) == 0)
+			<h2> Não encontramos nenhum agendamento para este CPF.</h2>
+			<br>
+			<h3> Certifique de digitar corretamente usando somente os números.</h3>
+		@endif
 		
 		@foreach($visitante_cadastrato as $key =>$visitante)
 		
@@ -38,13 +46,9 @@
 				<p>COMPROVANTE {{$key + 1}}</p>
 			</a>
 		</td>
-		
 
-		@if ( !$visitante_cadastrato )
-			<h2> Não foi encontramos nenhum agendamento para este CPF.</h2>
-			<br>
-			<h3> Certifique de digitar corretamente usando somente os números.</h3>
-		@endif
+
+		
 		@endforeach
 		
 	</div>
