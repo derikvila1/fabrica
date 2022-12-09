@@ -312,9 +312,8 @@
                         <b>{{$row->horario_visitacao_hora_chegada_estacao}}</b>
                     </h1> --}}
 
-                    <h1 class="ui header" id="texto-comprovacao">Endereço: Rua José Clemente - 564, esquina com a
-                        Rua
-                        Barroso
+                    <h1 class="ui header" id="texto-comprovacao">Endereço: Centro Cultural Palácio da Justiça
+                            Av. Eduardo Ribeiro, 901 - Centro, Manaus - AM
                     </h1>
                 </div>
 
