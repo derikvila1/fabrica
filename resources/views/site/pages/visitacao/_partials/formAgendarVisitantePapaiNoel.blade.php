@@ -56,10 +56,7 @@
 
 				 <div class="col-md-12">
 					<div class="py-5 text-center">
-						<h3>AGENDAMENTO DA SEMANA ESGOTADO</h3>
-						<p class="lead pt-2">
-							Abertura de novas vagas às sextas-feiras, a partir das 11h.
-                        </p>
+						
 
 						<P>
 						Ative o SININHO DA CULTURA nas redes sociais (@culturadoam) para não perder as outras informações sobre os próximos agendamentos, programação, estreias e muito mais!
