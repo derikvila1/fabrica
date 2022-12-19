@@ -323,9 +323,102 @@
                     <p id="label-documento-comprovante"><b>Deficiência: {{ $visitante_cadastrato->nome_deficiencia ??
                             ''}}</b>
                     </p>
+                    @if ($visitante_cadastrato->horario_visitacao_id == 341 ||
+                    $visitante_cadastrato->horario_visitacao_id == 342||
+                    $visitante_cadastrato->horario_visitacao_id == 344||
+                    $visitante_cadastrato->horario_visitacao_id == 345||
+                    $visitante_cadastrato->horario_visitacao_id == 347||
+                    $visitante_cadastrato->horario_visitacao_id == 348||
+                    $visitante_cadastrato->horario_visitacao_id == 349||
+                    $visitante_cadastrato->horario_visitacao_id == 350||
+                    $visitante_cadastrato->horario_visitacao_id == 351||
+                    $visitante_cadastrato->horario_visitacao_id == 353||
+                    $visitante_cadastrato->horario_visitacao_id == 354||
+                    $visitante_cadastrato->horario_visitacao_id == 355||
+                    $visitante_cadastrato->horario_visitacao_id == 364||
+                    $visitante_cadastrato->horario_visitacao_id == 365||
+                    $visitante_cadastrato->horario_visitacao_id == 366||
+                    $visitante_cadastrato->horario_visitacao_id == 367||
+                    $visitante_cadastrato->horario_visitacao_id == 368||
+                    $visitante_cadastrato->horario_visitacao_id == 370||
+                    $visitante_cadastrato->horario_visitacao_id == 371||
+                    $visitante_cadastrato->horario_visitacao_id == 372||
+                    $visitante_cadastrato->horario_visitacao_id == 375||
+                    $visitante_cadastrato->horario_visitacao_id == 382||
+                    $visitante_cadastrato->horario_visitacao_id == 386||
+                    $visitante_cadastrato->horario_visitacao_id == 387||
+                    $visitante_cadastrato->horario_visitacao_id == 388||
+                    $visitante_cadastrato->horario_visitacao_id == 392||
+                    $visitante_cadastrato->horario_visitacao_id == 404
+                    )
+
+                        @if($visitante_cadastrato->dependente4_nome == true)
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
+                        <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente_data_nascimento
+                                ?? ''}}</b> </p>
+
+                                <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente2_nome }}</b> </p>
+                                 <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                            $visitante_cadastrato->dependente2_data_nascimento ?? ''}}</b> </p>
 
 
-                    <?php if ($visitante_cadastrato->dependente_nome == true): ?>
+                            <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente3_nome }}</b> </p>
+                            <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                            $visitante_cadastrato->dependente3_data_nascimento ?? ''}}</b> </p>
+
+                        @elseif($visitante_cadastrato->dependente3_nome == true)
+
+                                <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
+                                <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente_data_nascimento
+                                ?? ''}}</b> </p>
+
+                                <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente2_nome }}</b> </p>
+                                <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente2_data_nascimento
+                                ?? ''}}</b> </p>
+
+                        @elseif($visitante_cadastrato->dependente2_nome == true)     
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
+                        <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente_data_nascimento
+                                ?? ''}}</b> </p>
+                        
+                     @elseif($visitante_cadastrato->dependente_nome == true) 
+                         <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
+                         <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente_data_nascimento
+                                ?? ''}}</b> </p>
+                        @endif
+
+
+                        @else
+                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
+                            <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                    $visitante_cadastrato->dependente_data_nascimento
+                                    ?? ''}}</b> </p>
+
+                            <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente2_nome }}</b> </p>
+                            <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                    $visitante_cadastrato->dependente2_data_nascimento
+                                    ?? ''}}</b> </p>
+
+                                    <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente3_nome }}</b> </p>
+                            <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente3_data_nascimento ?? ''}}</b> </p>
+                            
+                                <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente4_nome }}</b> </p>
+                            <p id="label-documento-comprovante"><b>Data Nascimento: {{
+                                $visitante_cadastrato->dependente4_data_nascimento ?? ''}}</b> </p>
+                    @endif
+
+
+
+
+
+
+                    <!-- <?php if ($visitante_cadastrato->dependente_nome == true): ?>
                         <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
                         <p id="label-documento-comprovante"><b>Data Nascimento: {{
                                 $visitante_cadastrato->dependente_data_nascimento
@@ -334,9 +427,10 @@
 
 
                     <?php if ($visitante_cadastrato->dependente2_nome == true ): ?>
-                        <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente2_nome }}</b> </p>
+                       <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente_nome }}</b> </p>
                         <p id="label-documento-comprovante"><b>Data Nascimento: {{
-                            $visitante_cadastrato->dependente2_data_nascimento ?? ''}}</b> </p>
+                                $visitante_cadastrato->dependente_data_nascimento
+                                ?? ''}}</b> </p>
                     <?php endif   ?>  
                     
                     <?php if ($visitante_cadastrato->dependente3_nome == true ): ?>
@@ -346,10 +440,16 @@
                     <?php endif   ?>  
 
                     <?php if ($visitante_cadastrato->dependente4_nome == true): ?>
+
+
+
                         <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->dependente4_nome }}</b> </p>
                         <p id="label-documento-comprovante"><b>Data Nascimento: {{
                             $visitante_cadastrato->dependente4_data_nascimento ?? ''}}</b> </p>
-                    <?php endif   ?>  
+
+                    <?php endif   ?>   -->
+
+
                 </div>
 
 
