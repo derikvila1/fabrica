@@ -41,7 +41,55 @@
                 </thead>
                 <tbody>
                     @forelse ($visitantes_inscritos_horario as $inscritos)
+
+                    @if ($inscritos->horario_visitacao_numero_vagas < -20)
+
+                    @if ($inscritos->dependente4_nome == true )
                         <tr>
+                            <td>-</td>
+                            <td>{{ $inscritos->nome_completo }}</td>
+                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
+                            <td>{{ $inscritos->dependente2_nome ?? '-' }}</td>
+                            <td>{{ $inscritos->dependente3_nome ?? '-' }}</td>
+                            <td> - </td>
+                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
+                        </tr>
+                    @elseif ($inscritos->dependente3_nome == true )
+                    <tr>
+                            <td>-</td>
+                            <td>{{ $inscritos->nome_completo }}</td>
+                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
+                            <td>{{ $inscritos->dependente2_nome ?? '-' }}</td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
+                        </tr>
+
+                    @elseif ($inscritos->dependente2_nome == true )
+                    <tr>
+                            <td>-</td>
+                            <td>{{ $inscritos->nome_completo }}</td>
+                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
+                        </tr>
+
+                        @elseif ($inscritos->dependente_nome == true )
+                        <tr>
+                            <td>-</td>
+                            <td>{{ $inscritos->nome_completo }}</td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td> - </td>
+                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
+                        </tr>
+                    @endif
+                    
+                    @else
+                    <tr>
                             <td>-</td>
                             <td>{{ $inscritos->nome_completo }}</td>
                             <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
@@ -50,9 +98,16 @@
                             <td>{{ $inscritos->dependente4_nome ?? '-' }}</td>
                             <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
                         </tr>
+
+
+                    @endif
+
                     @empty
                         <li>Nenhum Inscrito Cadastrado.</li>
                     @endforelse
+
+
+
                 </tbody>
             </table>
         
