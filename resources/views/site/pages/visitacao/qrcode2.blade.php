@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css"
-    href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
     <title>QrCode</title>
     <style>
         body {
@@ -142,16 +143,16 @@
             color: rgb(45, 71, 63);
             padding-top: 15px;
         }
-
     </style>
 </head>
+
 <body>
 
     <div id="wrap-all">
         <center style="padding-top: 16px">
             <button type="button" onclick="imprimir()">Imprimir comprovante</button>
         </center>
-        
+
 
         <div id="div-principal" align=center>
             <img src="https://eventos.cultura.am.gov.br/logo-christmas.png" width="130px" style="margin-top: -30px;">
@@ -165,8 +166,8 @@
             <p id="descricao-page-comprovante-text" style="color: rgb(60, 145, 202);"></p>
             <h1 class="ui header" id="texto-comprovacao"></h1>
         </div>
-    
-        <img src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='{{$code}}'">
+
+        <img src="https://chart.googleapis.com/chart?cht=qr&chs=500x500&chl='{{ $code }}'">
         <div style="max-width: 500px;">
             <p id="descricao-page-comprovante-text"
                 style="padding-top: 15px; padding-bottom: 15px; font-size: 20px important!;">Salve este
@@ -185,11 +186,12 @@
 
             <div id="infos-visitante-visitacao">
                 <p id="label-nome-comprovante"><b>Nome: {{ $visitante_cadastrato->nome_completo }}</b> </p>
-                <p id="label-documento-comprovante"><b>Contato: {{ $visitante_cadastrato->contato ?? ''}}</b> </p>
-                <p id="label-documento-comprovante"><b>Deficiência: {{ $visitante_cadastrato->deficiencia ?? ''}}</b> </p>
+                <p id="label-documento-comprovante"><b>Contato: {{ $visitante_cadastrato->contato ?? '' }}</b> </p>
+                <p id="label-documento-comprovante"><b>Deficiência: {{ $visitante_cadastrato->deficiencia ?? '' }}</b>
+                </p>
             </div>
         </div>
-        </div>
+    </div>
     </div>
     <div id="observacoes-importantes">
         <h1 class="ui header" id="texto-title">No dia do evento, lembre-se que:</h1>
@@ -213,15 +215,16 @@
         </div>
     </div>
     </div>
-    
+
     <footer style="margin: auto; text-align: center;">
         <img src="https://eventos.cultura.am.gov.br/Cartela-natal-100.jpg"
             style="width: 100%; padding: 30px; max-width: 900px;">
     </footer>
     <script>
-        function imprimir(){
+        function imprimir() {
             window.print();
         }
     </script>
 </body>
+
 </html>

@@ -22,4 +22,12 @@ class HorariosVisitacaoController extends Controller
             return view('site.pages.horarios.index', 
                  compact('horarios_visitacao'));  
     }
+    public function store(Request $request){
+        $data= [];
+        $data= $request->all();
+
+        $horario_cadastrado = $this->repository->create($data);
+
+
+    }
 }

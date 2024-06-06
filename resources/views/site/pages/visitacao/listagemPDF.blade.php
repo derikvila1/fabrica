@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <title>Fábrica do Papai Noel 2022</title> 
+        <title>Fabrica Papai Noel 2023</title> 
         <style>
             table {
                 width: 100%;
@@ -23,7 +23,7 @@
         </style>
     </head>
     <body>
-        <h3>Inscritos para a Fábrica do Papai Noel </h3>
+        <h3>Inscritos para a Fabrica do Papai Noel </h3>
         <h3>Dia:  <b>{{$horario->horario_visitacao_data}}</b> - 
             Hora: <b>{{$horario->horario_visitacao_hora_inicio}}</b></h3> 
             
@@ -34,80 +34,21 @@
                         <th>INSCRITO</th>
                         <th>DEPENDENTE</th>
                         <th>DEPENDENTE</th>
-                        <th>DEPENDENTE</th>
-                        <th>DEPENDENTE</th>
                         <th>VISITOU ?</th>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($visitantes_inscritos_horario as $inscritos)
-
-                    @if ($inscritos->horario_visitacao_numero_vagas < -20)
-
-                    @if ($inscritos->dependente4_nome == true )
                         <tr>
                             <td>-</td>
                             <td>{{ $inscritos->nome_completo }}</td>
-                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
+                            <td><b>{{ $inscritos->dependente_nome ?? '-' }}</b></td>
                             <td>{{ $inscritos->dependente2_nome ?? '-' }}</td>
-                            <td>{{ $inscritos->dependente3_nome ?? '-' }}</td>
-                            <td> - </td>
                             <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
                         </tr>
-                    @elseif ($inscritos->dependente3_nome == true )
-                    <tr>
-                            <td>-</td>
-                            <td>{{ $inscritos->nome_completo }}</td>
-                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
-                            <td>{{ $inscritos->dependente2_nome ?? '-' }}</td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
-                        </tr>
-
-                    @elseif ($inscritos->dependente2_nome == true )
-                    <tr>
-                            <td>-</td>
-                            <td>{{ $inscritos->nome_completo }}</td>
-                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
-                        </tr>
-
-                        @elseif ($inscritos->dependente_nome == true )
-                        <tr>
-                            <td>-</td>
-                            <td>{{ $inscritos->nome_completo }}</td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td> - </td>
-                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
-                        </tr>
-                    @endif
-                    
-                    @else
-                    <tr>
-                            <td>-</td>
-                            <td>{{ $inscritos->nome_completo }}</td>
-                            <td>{{ $inscritos->dependente_nome ?? '-' }}</td>
-                            <td>{{ $inscritos->dependente2_nome ?? '-' }}</td>
-                            <td>{{ $inscritos->dependente3_nome ?? '-' }}</td>
-                            <td>{{ $inscritos->dependente4_nome ?? '-' }}</td>
-                            <td><b>{{ $inscritos->visitou ?? ' '}}</b></td>
-                        </tr>
-
-
-                    @endif
-
                     @empty
                         <li>Nenhum Inscrito Cadastrado.</li>
                     @endforelse
-
-
-
                 </tbody>
             </table>
         

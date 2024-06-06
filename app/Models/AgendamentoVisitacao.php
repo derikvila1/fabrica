@@ -25,9 +25,7 @@ class AgendamentoVisitacao extends Model
         //Dependentes
         'dependente_nome','dependente_data_nascimento','dependente_cpf',
         'dependente2_nome','dependente2_data_nascimento','dependente2_cpf',
-        'dependente3_nome','dependente3_data_nascimento','dependente3_cpf',
-        'dependente4_nome','dependente4_data_nascimento','dependente4_cpf',
-    
+
         'horario_visitacao_id',
         
         'qr_code','estado','visitou'

@@ -21,6 +21,18 @@ class AgendamentoVisitacaoController extends Controller
         $this->repository = $agendamentoVisitacao;
         $this->horarios_visitacao = $horarios_visitacao;
     }
+
+    public function ended()
+    {
+        $horarios_visitacao = DB::table("horarios_visitacaos")
+        ->where("horario_visitacao_numero_vagas", ">", 0)
+        ->get();
+       // $lista_horarios = $this->repository->all();
+       // $horarios_visitacao = $this->horarios_visitacao->all();
+            return view('site.pages.visitacao._partials.esgotados', 
+                 compact('horarios_visitacao'));    
+    }
+
     public function index()
     {
         $horarios_visitacao = DB::table("horarios_visitacaos")
@@ -50,16 +62,14 @@ class AgendamentoVisitacaoController extends Controller
         if($request->dependente2_nome){
             $n++;
         }
-        if($request->dependente3_nome){
-            $n++;
-        }
-        if($request->dependente4_nome){
-            $n++;
-        }
         $data = [];
         $data = $request->all();
         $nome               = $data["nome_completo"];
         $horario_id         = $data["horario_visitacao_id"];
+
+        if(HorariosVisitacao::where('id', $horario_id)->first()->horario_visitacao_numero_vagas < 2){
+            return redirect('/agendamento/fabrica')->withErrors('error', "Não há mais vagas");
+        }
         //dd($data);
     /*
         $naturalidade       = $data["naturalidade"];
@@ -90,18 +100,16 @@ class AgendamentoVisitacaoController extends Controller
                 ->where('cpf',                          '=', $cpf_limpo)
                 ->where('nome_completo',                '=', $data["nome_completo"])
                 ->where('data_nascimento',              '=', $data["data_nascimento"])
-                // ->where('contato',                      '=', $data["contato"])
-                // ->where('email',                        '=', $data["email"])
+                ->where('contato',                      '=', $data["contato"])
+                ->where('email',                        '=', $data["email"])
                 ->where('deficiente',                   '=', $data["deficiente"])
                 ->where('nome_deficiencia',             '=', $data["nome_deficiencia"])
                 ->where('dependente_nome',              '=', $data["dependente_nome"])
                 ->where('dependente_data_nascimento',   '=', $data["dependente_data_nascimento"])
+                ->where('dependente_cpf',               '=', $data["dependente_cpf"])
                 ->where('dependente2_nome',             '=', $data["dependente2_nome"])
                 ->where('dependente2_data_nascimento',  '=', $data["dependente2_data_nascimento"])
-                ->where('dependente3_nome',             '=', $data["dependente3_nome"])
-                ->where('dependente3_data_nascimento',  '=', $data["dependente3_data_nascimento"])
-                ->where('dependente4_nome',             '=', $data["dependente4_nome"])
-                ->where('dependente4_data_nascimento',  '=', $data["dependente4_data_nascimento"])
+                ->where('dependente2_cpf',              '=', $data["dependente2_cpf"])
                 ->where('horario_visitacao_id',         '=', $data["horario_visitacao_id"])
                 ->first();
 
@@ -127,32 +135,9 @@ class AgendamentoVisitacaoController extends Controller
         }
     }
 
-    public function reprint(Request $request){
-        $cpf= $request->cpf;
-        $visitante_cadastrato = AgendamentoVisitacao::where('cpf', $cpf)->get();
-        return view('site.pages.visitacao.reprint3', compact('visitante_cadastrato'));
-    }
-
-    public function consulta(){
-        return view('site.pages.visitacao.consulta');
-    }
-
-    public function reprint2 (Request $request){
-
-        $code= "secretariadecultura156216";
-        $cpf = $request->cpf;
-        $index = $request->index;
-        $visitante_cadastrato = AgendamentoVisitacao::where('cpf', $cpf)->get();
-        $visitante_cadastrato = $visitante_cadastrato[$index];
-       
-        $row = HorariosVisitacao::where('id', $visitante_cadastrato->horario_visitacao_id)->first();
-     
-        return view('site.pages.visitacao.qrcode', compact('visitante_cadastrato', 'code', 'row',));
-    }
-
     public function listagem(){
         $visitantes = $this->repository->all();
-        $horarios = $this->horarios_visitacao->get();
+        $horarios = $this->horarios_visitacao->all();
 
         return view('site.pages.visitacao.listagem',
             compact('visitantes', 'horarios'));
@@ -200,5 +185,20 @@ class AgendamentoVisitacaoController extends Controller
              //->setPaper('a4', 'landscape')
             //  ->download('DATA-HORA.pdf');
              ->download($texto_arquivo_pdf.'.pdf');
+    }
+
+    public function rec(Request $request)
+    {
+        $agendamento_existente = DB::table('agendamento_visitacaos')->where('cpf', $request->cpf)->first();
+
+        if($agendamento_existente){
+            $code = $agendamento_existente->horario_visitacao_id.$request->cpf.$agendamento_existente->nome_completo;
+            $row = HorariosVisitacao::where('id', $agendamento_existente->horario_visitacao_id)->first();
+            $visitante_cadastrato = $agendamento_existente;
+            return view('site.pages.visitacao.qrcode', 
+            compact('visitante_cadastrato', 'code', 'row'));
+        }else{
+            return back()->withErrors('CPF não encontrado');
+        }
     }
 }

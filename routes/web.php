@@ -18,16 +18,17 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('agendamento/fabrica/qrcode',  [AgendamentoVisitacaoController::class, 'qrcode'  ]);
 Route::post('agendamento/fabrica/create', [AgendamentoVisitacaoController::class, 'store'  ]);
-Route::get('agendamento/fabrica',         [AgendamentoVisitacaoController::class, 'index'  ]);
+Route::post('/rec', [AgendamentoVisitacaoController::class, 'rec'  ]);
+Route::get('/agendamento/fabrica',         [AgendamentoVisitacaoController::class, 'index'  ]);
+// Route::get('agendamento/fabrica',         [AgendamentoVisitacaoController::class, 'ended'  ]);
 
-Route::get('horarios',                    [AgendamentoVisitacaoController::class, 'reprint'  ]);
+Route::get('horarios',                    [HorariosVisitacaoController::class, 'index'  ]);
+Route::post('horarios/create',                    [HorariosVisitacaoController::class, 'store'  ]);
 
-Route::get('listagem',                    [AgendamentoVisitacaoController::class, 'listagem']);
+Route::get('listagemv2',                    [AgendamentoVisitacaoController::class, 'listagem']);
 Route::get('listagem/inscritos/{id}',     [AgendamentoVisitacaoController::class, 'listagemInscritos']);
 Route::get('pdf/{id}',                    [AgendamentoVisitacaoController::class, 'listagemPDF']);
 
-Route::get('consulta',        [AgendamentoVisitacaoController::class, 'consulta']);
-
-Route::get('reprint',        [AgendamentoVisitacaoController::class, 'reprint']);
-
-Route::get('reprint2', [AgendamentoVisitacaoController::class, 'reprint2']);
+Route::fallback(function () {
+    return redirect("https://cultura.am.gov.br/");
+});

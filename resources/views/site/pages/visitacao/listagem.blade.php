@@ -1,9 +1,9 @@
 @extends('adminlte::page')
 
-@section('title', 'Fábrica do Papai Noel 2022')
+@section('title', 'Visitação Bumbódromo 2024')
 
 @section('content_header')
-<h1>Fábrica do Papai Noel 2022</h1>
+<h1>Sessões para Visitação Bumbódromo 2024</h1>
 @stop
 
 @section('content')
@@ -24,9 +24,7 @@
             </tr>
         </thead>
         <tbody>
-       
             @foreach ($horarios as $horario)
-                
                 <tr>
                     <td>{{ $horario->id }}</td>
                     <td><b>{{ $horario->horario_visitacao_data }}</b></td>
